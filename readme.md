@@ -75,11 +75,13 @@ Therefore, the `models/` and `utils/` folders from YOLOv5 should be included in 
 
 ## Example Video
 
+Since the full dataset is associated with ongoing academic research and experimental data management requirements, only a short demo video is provided in this repository for testing and reproducibility of the basic workflow.
 The default input video path is:
 
 ```python
 video_path = "example/demo.avi"
 ```
+Some example frames from the processed video is shown below.
 ![Demo result](assets/result.png)
 
 ## Usage
