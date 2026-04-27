@@ -1,9 +1,11 @@
-# Critical Frame Identification for Optical Tweezers Videos
+# Keypoint Extraction and Critical Frame Identification for Optical Tweezers Videos
 
 This repository provides an automatic critical frame identification pipeline for optical tweezers-based cell mechanics videos. The pipeline integrates YOLOv5-based cell localization, Cellpose-SAM-based contour segmentation, geometric keypoint extraction, and displacement-based critical frame identification.
 
 The program reads an input video frame by frame, detects the target cell region, extracts keypoints from the segmented cell contour, calculates keypoint displacement across frames, and identifies the first frame with significant keypoint fluctuation as the critical frame.
+The following animation illustrates the frame-by-frame cell contour detection, keypoint extraction, and critical frame identification process.
 
+![Demo GIF](assets/demo.gif)
 ## Features
 
 - Frame-by-frame video processing
@@ -49,16 +51,16 @@ If GPU acceleration is required, please install the PyTorch version compatible w
 
 ## Model Weights
 
-This project requires the following model files:
+Due to file size limitations, the Cellpose-SAM model weights are not included directly in this repository. The YOLOv5 detection weight file has already been provided in the `weights/` directory, while the Cellpose-SAM weight file is provided through GitHub Releases.
+Please download the Cellpose-SAM weight file from the following link:
+https://github.com/18010911651-yue/Keypoint-Extraction-and-Critical-Frame-Identification-for-Optical-Tweezers-Videos/releases/download/v1.0.0/cellpose-sam.zip
+
+After downloading, unzip the file and place it in the `weights/` directory. The expected directory structure is:
 
 ```text
-weights/yolov5_best.pt
-weights/cellpose-sam
-```
-
-Please place the YOLOv5 detection model and the Cellpose-SAM segmentation model in the `weights/` directory before running the program.
-
-Due to file size limitations, cellpose-sam model weights are not recommended to be committed directly to GitHub. They can be provided through GitHub Releases, Google Drive, Zenodo, or other public repositories.
+weights/
+├── yolov5_best.pt
+└── cellpose-sam
 
 ## YOLOv5 Source Files
 
