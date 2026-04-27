@@ -3,7 +3,7 @@
 This repository provides an automatic critical frame identification pipeline for optical tweezers-based cell mechanics videos. The pipeline integrates YOLOv5-based cell localization, Cellpose-SAM-based contour segmentation, geometric keypoint extraction, and displacement-based critical frame identification.
 
 The program reads an input video frame by frame, detects the target cell region, extracts keypoints from the segmented cell contour, calculates keypoint displacement across frames, and identifies the first frame with significant keypoint fluctuation as the critical frame.
-The following animation illustrates the frame-by-frame cell contour detection, keypoint extraction, and critical frame identification process.
+The following animation illustrates the frame-by-frame cell contour detection, keypoint extraction process.
 
 ![Demo GIF](assets/demo.gif)
 ## Features
